@@ -1,0 +1,123 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/jjmar/dice-maiden-ui/blob/main/data/configuration.schema",
+    "title": "Dice Maiden UI schema",
+    "description": "Schema for https://github.com/jjmar/dice-maiden-ui configuration file",
+    "type": "object",
+    "examples": [
+        {
+            "character_name": "Kalius",
+            "commands": [
+                {
+                    "name": "Charmisa Saving Throw",
+                    "num_dice": 1,
+                    "num_dice_sides": 20,
+                    "modifiers": 2
+                }
+            ]
+        }
+    ],
+    "required": [
+        "character_name",
+        "commands"
+    ],
+    "properties": {
+        "character_name": {
+            "$id": "#/properties/character_name",
+            "type": "string",
+            "title": "The character_name schema",
+            "description": "The name of the character",
+            "examples": [
+                "Kalius"
+            ]
+        },
+        "commands": {
+            "$id": "#/properties/commands",
+            "type": "array",
+            "title": "The commands schema",
+            "description": "List of commands to automate.",
+            "examples": [
+                [
+                    {
+                        "name": "Charmisa Saving Throw",
+                        "num_dice": 1,
+                        "num_dice_sides": 20,
+                        "modifiers": 3
+                    }
+                ]
+            ],
+            "additionalItems": false,
+            "items": {
+                "$id": "#/properties/commands/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/commands/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "List of commands.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "name": "Charmisa Saving Throw",
+                                "num_dice": 1,
+                                "num_dice_sides": 20,
+                                "modifiers": 2
+                            }
+                        ],
+                        "required": [
+                            "name",
+                            "num_dice",
+                            "num_dice_sides",
+                            "modifiers"
+                        ],
+                        "properties": {
+                            "name": {
+                                "$id": "#/properties/commands/items/anyOf/0/properties/name",
+                                "type": "string",
+                                "title": "The name schema",
+                                "description": "Name of the command to be run",
+                                "default": "",
+                                "examples": [
+                                    "Charmisa Saving Throw"
+                                ]
+                            },
+                            "num_dice": {
+                                "$id": "#/properties/commands/items/anyOf/0/properties/num_dice",
+                                "type": "integer",
+                                "title": "The num_dice schema",
+                                "description": "The number of dice to roll for command",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "num_dice_sides": {
+                                "$id": "#/properties/commands/items/anyOf/0/properties/num_dice_sides",
+                                "type": "integer",
+                                "title": "The num_dice_sides schema",
+                                "description": "The dice type to roll, e.g for a d20 you'd specify 20",
+                                "default": 0,
+                                "examples": [
+                                    20
+                                ]
+                            },
+                            "modifiers": {
+                                "$id": "#/properties/commands/items/anyOf/0/properties/modifiers",
+                                "type": "integer",
+                                "title": "The modifiers schema",
+                                "description": "The amount to add or subtract from this commands roll",
+                                "default": "",
+                                "examples": [
+                                    2
+                                ]
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                ]
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false
+}

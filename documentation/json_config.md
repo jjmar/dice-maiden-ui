@@ -65,6 +65,7 @@ The amount to add or remove from the dice roll. The following are examples of ac
 - `-5`
 
 Notice that the sign is required.
+
 # Example Configuration File
 
 ```json
