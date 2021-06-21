@@ -1,0 +1,11 @@
+{
+  "character_name": "Kal",
+  "commands": [
+    {
+      "name" : "Charisma Saving Throw",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifiers": 3
+    }
+  ]
+}
