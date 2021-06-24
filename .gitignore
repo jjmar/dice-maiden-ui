@@ -128,3 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .idea/
+
+# Project Specific
+
+tkinter_testing/
