@@ -1,11 +1,29 @@
 {
-  "character_name": "Kal",
+  "character_name": "Kalius",
   "commands": [
     {
-      "name" : "Charisma Saving Throw",
+      "name" : "1d20 + 3",
+      "num_dice": 1,
+      "num_dice_sides": "3",
+      "modifiers": 3
+    },
+    {
+      "name" : "1d20 + 5",
       "num_dice": 1,
       "num_dice_sides": 20,
-      "modifiers": 3
+      "modifiers": 5
+    },
+    {
+      "name" : "1d6 - 4",
+      "num_dice": 1,
+      "num_dice_sides": 6,
+      "modifiers": -4
+    },
+    {
+      "name" : "big roller",
+      "num_dice": 20,
+      "num_dice_sides": 20,
+      "modifiers": 13
     }
   ]
 }
