@@ -2,28 +2,184 @@
   "character_name": "Kalius",
   "commands": [
     {
-      "name" : "1d20 + 3",
+      "name" : "1d4 + 3",
       "num_dice": 1,
-      "num_dice_sides": "3",
-      "modifiers": 3
+      "num_dice_sides": "4",
+      "modifier": 3
     },
     {
       "name" : "1d20 + 5",
       "num_dice": 1,
       "num_dice_sides": 20,
-      "modifiers": 5
+      "modifier": 5
     },
     {
       "name" : "1d6 - 4",
       "num_dice": 1,
       "num_dice_sides": 6,
-      "modifiers": -4
+      "modifier": -4
     },
     {
       "name" : "big roller",
       "num_dice": 20,
       "num_dice_sides": 20,
-      "modifiers": 13
+      "modifier": 13
+    },
+    {
+      "name" : "Basic 1d20 + 0",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifier": 0
+    },
+        {
+      "name" : "1d4 + 3",
+      "num_dice": 1,
+      "num_dice_sides": "4",
+      "modifier": 3
+    },
+    {
+      "name" : "1d20 + 5",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifier": 5
+    },
+    {
+      "name" : "1d6 - 4",
+      "num_dice": 1,
+      "num_dice_sides": 6,
+      "modifier": -4
+    },
+    {
+      "name" : "big roller",
+      "num_dice": 20,
+      "num_dice_sides": 20,
+      "modifier": 13
+    },
+    {
+      "name" : "Basic 1d20 + 0",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifier": 0
+    },
+        {
+      "name" : "1d4 + 3",
+      "num_dice": 1,
+      "num_dice_sides": "4",
+      "modifier": 3
+    },
+    {
+      "name" : "1d20 + 5",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifier": 5
+    },
+    {
+      "name" : "1d6 - 4",
+      "num_dice": 1,
+      "num_dice_sides": 6,
+      "modifier": -4
+    },
+    {
+      "name" : "big roller",
+      "num_dice": 20,
+      "num_dice_sides": 20,
+      "modifier": 13
+    },
+    {
+      "name" : "Basic 1d20 + 0",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifier": 0
+    },
+        {
+      "name" : "1d4 + 3",
+      "num_dice": 1,
+      "num_dice_sides": "4",
+      "modifier": 3
+    },
+    {
+      "name" : "1d20 + 5",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifier": 5
+    },
+    {
+      "name" : "1d6 - 4",
+      "num_dice": 1,
+      "num_dice_sides": 6,
+      "modifier": -4
+    },
+    {
+      "name" : "big roller",
+      "num_dice": 20,
+      "num_dice_sides": 20,
+      "modifier": 13
+    },
+    {
+      "name" : "Basic 1d20 + 0",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifier": 0
+    },
+        {
+      "name" : "1d4 + 3",
+      "num_dice": 1,
+      "num_dice_sides": "4",
+      "modifier": 3
+    },
+    {
+      "name" : "1d20 + 5",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifier": 5
+    },
+    {
+      "name" : "1d6 - 4",
+      "num_dice": 1,
+      "num_dice_sides": 6,
+      "modifier": -4
+    },
+    {
+      "name" : "big roller",
+      "num_dice": 20,
+      "num_dice_sides": 20,
+      "modifier": 13
+    },
+    {
+      "name" : "Basic 1d20 + 0",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifier": 0
+    },
+        {
+      "name" : "1d4 + 3",
+      "num_dice": 1,
+      "num_dice_sides": "4",
+      "modifier": 3
+    },
+    {
+      "name" : "1d20 + 5",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifier": 5
+    },
+    {
+      "name" : "1d6 - 4",
+      "num_dice": 1,
+      "num_dice_sides": 6,
+      "modifier": -4
+    },
+    {
+      "name" : "big roller",
+      "num_dice": 20,
+      "num_dice_sides": 20,
+      "modifier": 13
+    },
+    {
+      "name" : "Basic 1d20 + 0",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifier": 0
     }
   ]
 }
