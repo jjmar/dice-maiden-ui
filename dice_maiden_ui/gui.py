@@ -1,5 +1,6 @@
 import tkinter as tk
 from command import Command
+from functools import partial
 
 
 class DiceMaidenApp(tk.Frame):
@@ -18,6 +19,8 @@ class DiceMaidenApp(tk.Frame):
     def generate_widgets(self):
         self.grid(row=0, column=0, sticky='nsew')
 
+        self.frames = {}
+
         frm_commands = CommandsFrame(self, text='Commands', padx='5', pady='5')
         frm_options = OptionsFrame(self, text='Options')
         frm_output = OutputFrame(self, text='Output')
@@ -30,6 +33,10 @@ class DiceMaidenApp(tk.Frame):
         frm_commands.grid(row=0, column=0, sticky='nsew')
         frm_options.grid(row=1, column=0, sticky="nsew")
         frm_output.grid(row=2, column=0, sticky='nsew')
+
+        self.frames[CommandsFrame] = frm_commands
+        self.frames[OptionsFrame] = frm_options
+        self.frames[OutputFrame] = frm_output
 
 
 class CommandsFrame(tk.LabelFrame):
@@ -49,7 +56,7 @@ class CommandsFrame(tk.LabelFrame):
             self.grid_rowconfigure(row, weight=1)
             self.columnconfigure(column, weight=1)
 
-            b = tk.Button(self, text=c.name, width=1)
+            b = tk.Button(self, text=c.name, width=1, wraplength=100, command=partial(self.click_command, c))
             b.grid(column=column, row=row, sticky='nsew')
 
             column += 1
@@ -58,6 +65,11 @@ class CommandsFrame(tk.LabelFrame):
                 row += 1
                 column = 0
 
+    def click_command(self, command):
+        roll = command.to_dice_maiden_roll()
+        print(roll)
+        self.master.frames[OutputFrame].display_roll(roll)
+
 
 class OptionsFrame(tk.LabelFrame):
     def __init__(self, *args, **kwargs):
@@ -65,8 +77,7 @@ class OptionsFrame(tk.LabelFrame):
         self.generate_widgets()
 
     def generate_widgets(self):
-        test = tk.Label(self, text='Options')
-        test.grid()
+        pass
 
 
 class OutputFrame(tk.LabelFrame):
@@ -74,6 +85,13 @@ class OutputFrame(tk.LabelFrame):
         tk.LabelFrame.__init__(self, *args, **kwargs)
         self.generate_widgets()
 
+    def display_roll(self, text):
+        self.statusbar.config(text=text)
+        self.statusbar.after(5000, self.hide_roll)
+
+    def hide_roll(self):
+        self.statusbar.config(text='')
+
     def generate_widgets(self):
-        test = tk.Label(self, text='Status')
-        test.pack()
+        self.statusbar = tk.Label(self, text='Foo')
+        self.statusbar.pack(expand=True, fill=tk.BOTH)
