@@ -1,6 +1,7 @@
 import tkinter as tk
 from command import Command
 from functools import partial
+import pyperclip
 
 
 class DiceMaidenApp(tk.Frame):
@@ -67,6 +68,7 @@ class CommandsFrame(tk.LabelFrame):
 
     def click_command(self, command):
         roll = command.to_dice_maiden_roll()
+        pyperclip.copy(roll)
         self.master.frames[OutputFrame].display_roll(roll)
 
 
