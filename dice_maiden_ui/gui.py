@@ -67,7 +67,6 @@ class CommandsFrame(tk.LabelFrame):
 
     def click_command(self, command):
         roll = command.to_dice_maiden_roll()
-        print(roll)
         self.master.frames[OutputFrame].display_roll(roll)
 
 
@@ -84,14 +83,19 @@ class OutputFrame(tk.LabelFrame):
     def __init__(self, *args, **kwargs):
         tk.LabelFrame.__init__(self, *args, **kwargs)
         self.generate_widgets()
+        self.after_id = None
 
     def display_roll(self, text):
-        self.statusbar.config(text=text)
-        self.statusbar.after(5000, self.hide_roll)
+        if self.after_id:
+            self.statusbar.after_cancel(self.after_id)
+
+        self.statusbar.config(text=text, fg='green')
+        self.after_id = self.statusbar.after(5000, self.hide_roll)
 
     def hide_roll(self):
+        self.after_id = None
         self.statusbar.config(text='')
 
     def generate_widgets(self):
-        self.statusbar = tk.Label(self, text='Foo')
+        self.statusbar = tk.Label(self)
         self.statusbar.pack(expand=True, fill=tk.BOTH)
