@@ -6,7 +6,11 @@ class Command:
         self.modifier = json_command['modifier']
 
     def to_dice_maiden_roll(self):
-        modifier_sign = '+' if self.modifier >= 0 else ''
-        modifier_str = "{}{}".format(modifier_sign, self.modifier)
+
+        if self.modifier != 0:
+            modifier_sign = '+' if self.modifier >= 0 else ''
+            modifier_str = "{}{}".format(modifier_sign, self.modifier)
+        else:
+            modifier_str = ''
 
         return "!roll {}d{}{}".format(self.num_dice, self.num_dice_sides,  modifier_str)
