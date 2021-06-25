@@ -2,7 +2,7 @@
   "character_name": "Kalius",
   "commands": [
     {
-      "name" : "1d4 + 3",
+      "name" : "Spell: Shatter",
       "num_dice": 1,
       "num_dice_sides": "4",
       "modifier": 3
@@ -20,7 +20,7 @@
       "modifier": -4
     },
     {
-      "name" : "big roller",
+      "name" : "Saving Throw: Charisma but then we got outside",
       "num_dice": 20,
       "num_dice_sides": 20,
       "modifier": 13
