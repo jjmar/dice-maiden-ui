@@ -12,7 +12,7 @@
                     "name": "Charmisa Saving Throw",
                     "num_dice": 1,
                     "num_dice_sides": 20,
-                    "modifiers": 2
+                    "modifier": 2
                 }
             ]
         }
@@ -42,7 +42,7 @@
                         "name": "Charmisa Saving Throw",
                         "num_dice": 1,
                         "num_dice_sides": 20,
-                        "modifiers": 3
+                        "modifier": 3
                     }
                 ]
             ],
@@ -68,7 +68,7 @@
                             "name",
                             "num_dice",
                             "num_dice_sides",
-                            "modifiers"
+                            "modifier"
                         ],
                         "properties": {
                             "name": {
@@ -101,10 +101,10 @@
                                     20
                                 ]
                             },
-                            "modifiers": {
-                                "$id": "#/properties/commands/items/anyOf/0/properties/modifiers",
+                            "modifier": {
+                                "$id": "#/properties/commands/items/anyOf/0/properties/modifier",
                                 "type": "integer",
-                                "title": "The modifiers schema",
+                                "title": "The modifier schema",
                                 "description": "The amount to add or subtract from this commands roll",
                                 "default": "",
                                 "examples": [
