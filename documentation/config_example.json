@@ -3,7 +3,7 @@
   "commands": [
     {
       "name" : "Spell: Shatter",
-      "num_dice": 1,
+      "num_dice": 5,
       "num_dice_sides": "4",
       "modifier": 3
     },
