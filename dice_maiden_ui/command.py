@@ -49,7 +49,6 @@ def calculate_dice_roll(num_dice, num_dice_sides, base_modifier,
 
     dice_roll = roll_format.format(num_dice=num_dice, num_dice_sides=num_dice_sides, adv_dis=adv_dis, modifier=modifier)
 
-    print(dice_roll)
     return dice_roll
 
 
