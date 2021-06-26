@@ -1,5 +1,5 @@
 import tkinter as tk
-from command import Command
+from command import Command, Modifier, generate_roll_string
 from functools import partial
 import pyperclip
 
@@ -67,7 +67,7 @@ class CommandsFrame(tk.LabelFrame):
                 column = 0
 
     def click_command(self, command):
-        roll = command.to_dice_maiden_roll()
+        roll = generate_roll_string(command, Modifier(False, False, 0, False))
         pyperclip.copy(roll)
         self.master.frames[OutputFrame].display_roll(roll)
 
