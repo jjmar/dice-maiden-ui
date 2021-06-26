@@ -67,20 +67,19 @@ class CommandsFrame(tk.LabelFrame):
                 column = 0
 
     def click_command(self, command):
-        roll = generate_roll_string(command, Modifier(False, False, 0, False))
+        modifier = self.master.frames[ModifiersFrame].modifier
+
+        roll = generate_roll_string(command, modifier)
         pyperclip.copy(roll)
         self.master.frames[OutputFrame].display_roll(roll)
 
-        print(self.master.frames[ModifiersFrame].modifier.advantage.get())
-        print(self.master.frames[ModifiersFrame].modifier.disadvantage.get())
-        print(self.master.frames[ModifiersFrame].modifier.critical_hit.get())
-        print(self.master.frames[ModifiersFrame].modifier.extra_modifer.get())
+        modifier.reset()
 
 
 class ModifiersFrame(tk.LabelFrame):
     def __init__(self, *args, **kwargs):
         tk.LabelFrame.__init__(self, *args, **kwargs)
-        self.modifier = Modifier(False, False, 0, False)
+        self.modifier = Modifier(tk.BooleanVar(self), tk.BooleanVar(self), tk.IntVar(), tk.BooleanVar())
         self.generate_widgets()
 
     def generate_widgets(self):
@@ -91,18 +90,6 @@ class ModifiersFrame(tk.LabelFrame):
         self.grid_rowconfigure(0, weight=1)
         self.grid_rowconfigure(1, weight=1)
 
-        lbl_advantage = tk.Label(self, text='Advantage')
-        lbl_disadvantage = tk.Label(self, text='Disadvantage')
-        lbl_critical_hit = tk.Label(self, text='Critical Hit')
-        lbl_modifiers = tk.Label(self, text='Extra Modifiers')
-
-
-        self.modifier.advantage = tk.BooleanVar(self, value=False)
-        self.modifier.disadvantage = tk.BooleanVar(self, value=False)
-        self.modifier.critical_hit = tk.BooleanVar(self, value=False)
-        self.modifier.extra_modifer = tk.IntVar(self, value=0)
-
-
         chk_advantage = tk.Checkbutton(self, text='Advantage', variable=self.modifier.advantage)
         chk_disadvantage = tk.Checkbutton(self, text='Disadvantage', variable=self.modifier.disadvantage)
         chk_critical_hit = tk.Checkbutton(self, text='Critical Hit', variable=self.modifier.critical_hit)
@@ -110,20 +97,14 @@ class ModifiersFrame(tk.LabelFrame):
         frm_modifier = tk.Frame(self)
         lbl_modifier = tk.Label(frm_modifier, text='Extra Modifiers')
         scrl_modifier = tk.Scale(frm_modifier, from_=-20, to=20, orient=tk.HORIZONTAL,
-                                 length=250, variable=self.modifier.extra_modifer)
+                                 length=250, variable=self.modifier.extra_modifier)
         lbl_modifier.pack()
         scrl_modifier.pack(side=tk.LEFT, expand=True)
 
-        # chk_advantage.pack(side=tk.LEFT)
-        # chk_disadvantage.pack(side=tk.LEFT)
-        # chk_critical_hit.pack(side=tk.LEFT)
-        # scrl_extra_modifier.pack(side=tk.LEFT, fill=tk.BOTH)
         chk_advantage.grid(row=0, column=0, sticky='w')
         chk_disadvantage.grid(row=0, column=1, sticky='w')
         chk_critical_hit.grid(row=0, column=2, sticky='w')
 
-        # scrl_modifier.grid(row=1, column=0)
-        # lbl_modifier.grid(row=1, column=0, sticky='e')
         frm_modifier.grid(row=0, column=3, sticky='nesw')
 
 
