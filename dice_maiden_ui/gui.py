@@ -87,6 +87,7 @@ class ModifiersFrame(tk.LabelFrame):
         self.grid_columnconfigure(0, weight=1)
         self.grid_columnconfigure(1, weight=1)
         self.grid_columnconfigure(2, weight=1)
+        self.grid_columnconfigure(3, weight=3)
         self.grid_rowconfigure(0, weight=1)
         self.grid_rowconfigure(1, weight=1)
 
@@ -108,9 +109,9 @@ class ModifiersFrame(tk.LabelFrame):
 
         frm_modifier = tk.Frame(self)
         lbl_modifier = tk.Label(frm_modifier, text='Extra Modifiers')
-        scrl_modifier = tk.Scale(frm_modifier, from_=-50, to=50, orient=tk.HORIZONTAL,
-                                       variable=self.modifier.extra_modifer)
-        lbl_modifier.pack(side=tk.LEFT)
+        scrl_modifier = tk.Scale(frm_modifier, from_=-20, to=20, orient=tk.HORIZONTAL,
+                                 length=250, variable=self.modifier.extra_modifer)
+        lbl_modifier.pack()
         scrl_modifier.pack(side=tk.LEFT, expand=True)
 
         # chk_advantage.pack(side=tk.LEFT)
@@ -123,7 +124,7 @@ class ModifiersFrame(tk.LabelFrame):
 
         # scrl_modifier.grid(row=1, column=0)
         # lbl_modifier.grid(row=1, column=0, sticky='e')
-        frm_modifier.grid(row=1, column=0, sticky='ew')
+        frm_modifier.grid(row=0, column=3, sticky='nesw')
 
 
 class OutputFrame(tk.LabelFrame):
