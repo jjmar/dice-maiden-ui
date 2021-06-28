@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import filedialog as fd
 from command import Command, Modifier, generate_roll_string
 from functools import partial
 import pyperclip
@@ -16,10 +17,23 @@ class DiceMaidenApp(tk.Frame):
         self.master.minsize(800, 400)
         self.master.grid_rowconfigure(0, weight=1)
         self.master.grid_columnconfigure(0, weight=1)
+        self.generate_file_menu()
+        self.grid(row=0, column=0, sticky='nsew', padx='8', pady='8')
+
+    def open_file(self):
+        file = fd.askopenfile(title='Please select a dice maiden ui configuration file',
+                           filetypes=[('JSON File', ['.json'])])
+        print(file)
+
+
+    def generate_file_menu(self):
+        menubar = tk.Menu(self.master)
+        file_menu = tk.Menu(menubar)
+        file_menu.add_command(label='Open', command=self.open_file)
+        menubar.add_cascade(label='File', menu=file_menu)
+        self.master.config(menu=menubar)
 
     def generate_widgets(self):
-        self.grid(row=0, column=0, sticky='nsew')
-
         self.frames = {}
 
         frm_commands = CommandsFrame(self, text='Commands', padx='5', pady='5')
