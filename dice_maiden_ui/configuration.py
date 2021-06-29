@@ -1,26 +1,16 @@
-from jsonschema import validate, exceptions
+import jsonschema
 import json
 
 
 def open_json_file(path):
     with open(path) as f:
-        schema = json.load(f)
+        data = json.load(f)
 
-    return schema
-
-
-def validate_json_schema(schema, config):
-    try:
-        validate(config, schema)
-    except exceptions.ValidationError as e:
-        print(e.message)
-        raise
+    return data
 
 
-def get_config():
-    config = open_json_file('../data/configuration.schema')
-    schema = open_json_file('../documentation/config_example.json')
+def validate_config_against_schema(config_json):
+    schema_json = open_json_file('../data/configuration.schema')
 
-    validate_json_schema(schema, config)
+    jsonschema.validate(config_json, schema_json)
 
-    return schema

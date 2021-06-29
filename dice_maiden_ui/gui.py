@@ -1,17 +1,17 @@
 import tkinter as tk
 from tkinter import filedialog as fd
 from command import Command, Modifier, generate_roll_string
+from configuration import validate_config_against_schema
 from functools import partial
 import pyperclip
+import json
+import jsonschema
 
 
 class DiceMaidenApp(tk.Frame):
-    def __init__(self, root, config):
+    def __init__(self, root):
         tk.Frame.__init__(self, root)
-        self.config = config
-        self.commands = [Command(c) for c in config['commands']]
         self.configure_window()
-        self.generate_widgets()
 
     def configure_window(self):
         self.master.minsize(800, 400)
@@ -23,8 +23,15 @@ class DiceMaidenApp(tk.Frame):
     def open_file(self):
         file = fd.askopenfile(title='Please select a dice maiden ui configuration file',
                            filetypes=[('JSON File', ['.json'])])
-        print(file)
 
+        config_json = json.load(file)
+
+        try:
+            validate_config_against_schema(config_json)
+        except jsonschema.ValidationError as e:
+            tk.messagebox.showerror("Invalid Configuration", "Error - {}".format(e.message))
+
+        self.generate_widgets(config_json)
 
     def generate_file_menu(self):
         menubar = tk.Menu(self.master)
@@ -33,10 +40,10 @@ class DiceMaidenApp(tk.Frame):
         menubar.add_cascade(label='File', menu=file_menu)
         self.master.config(menu=menubar)
 
-    def generate_widgets(self):
+    def generate_widgets(self, config):
         self.frames = {}
 
-        frm_commands = CommandsFrame(self, text='Commands', padx='5', pady='5')
+        frm_commands = CommandsFrame(self, config=config, text='Commands', padx='5', pady='5')
         frm_options = ModifiersFrame(self, text='Options')
         frm_output = OutputFrame(self, text='Output')
 
@@ -57,12 +64,13 @@ class DiceMaidenApp(tk.Frame):
 class CommandsFrame(tk.LabelFrame):
     MAX_COLUMNS = 6
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self,  *args, **kwargs):
+        config = kwargs.pop('config', None)
         tk.LabelFrame.__init__(self, *args, **kwargs)
-        self.generate_widgets()
+        self.generate_widgets(config)
 
-    def generate_widgets(self):
-        commands = self.master.commands
+    def generate_widgets(self, config):
+        commands = [Command(c) for c in config['commands']]
 
         row = 0
         column = 0
