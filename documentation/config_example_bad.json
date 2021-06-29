@@ -2,14 +2,14 @@
   "character_name": "Kalius",
   "commands": [
     {
-      "name" : "Spell: Shatter",
+      "name" : 62,
       "num_dice": 5,
       "num_dice_sides": 4,
       "modifier": 3
     },
     {
       "name" : "1d20 + 5",
-      "num_dice": 1,
+      "num_dice": "abceded",
       "num_dice_sides": 20,
       "modifier": 5
     },
