@@ -69,7 +69,7 @@
     },
     {
       "name" : "1d20 + 5",
-      "num_dice": 1,
+      "num_dice": 5,
       "num_dice_sides": 20,
       "modifier": 5
     },

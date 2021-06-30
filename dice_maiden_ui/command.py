@@ -6,7 +6,7 @@ class Command:
         self.modifier = json_command['modifier']
 
 
-class Modifier:
+class Modifiers:
     def __init__(self, advantage, disadvantage, extra_modifier, critical_hit):
         self.advantage = advantage
         self.disadvantage = disadvantage
