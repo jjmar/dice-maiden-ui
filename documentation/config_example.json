@@ -3,183 +3,45 @@
   "commands": [
     {
       "name" : "Spell: Shatter",
-      "num_dice": 5,
-      "num_dice_sides": 4,
-      "modifier": 3
+      "num_dice": 1,
+      "num_dice_sides": 8,
+      "modifier": 2
     },
     {
-      "name" : "1d20 + 5",
+      "name" : "Attack: Long sword",
       "num_dice": 1,
       "num_dice_sides": 20,
+      "modifier": 4
+    },
+    {
+      "name" : "Damage: Long sword",
+      "num_dice": 1,
+      "num_dice_sides": 10,
       "modifier": 5
     },
     {
-      "name" : "1d6 - 4",
+      "name" : "Ability Check: Intelligence",
       "num_dice": 1,
-      "num_dice_sides": 6,
+      "num_dice_sides": 20,
+      "modifier": -3
+    },
+    {
+      "name" : "Ability Check: Charisma",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifier": 10
+    },
+    {
+      "name" : "Ability Check: Strength",
+      "num_dice": 1,
+      "num_dice_sides": 20,
+      "modifier": -1
+    },
+    {
+      "name" : "Ability Check: Wisdom",
+      "num_dice": 1,
+      "num_dice_sides": 20,
       "modifier": -4
-    },
-    {
-      "name" : "Saving Throw: Charisma but then we got outside",
-      "num_dice": 20,
-      "num_dice_sides": 20,
-      "modifier": 13
-    },
-    {
-      "name" : "Basic 1d20 + 0",
-      "num_dice": 1,
-      "num_dice_sides": 20,
-      "modifier": 0
-    },
-        {
-      "name" : "1d4 + 3",
-      "num_dice": 1,
-      "num_dice_sides": 4,
-      "modifier": 3
-    },
-    {
-      "name" : "1d20 + 5",
-      "num_dice": 1,
-      "num_dice_sides": 20,
-      "modifier": 5
-    },
-    {
-      "name" : "1d6 - 4",
-      "num_dice": 1,
-      "num_dice_sides": 6,
-      "modifier": -4
-    },
-    {
-      "name" : "big roller",
-      "num_dice": 20,
-      "num_dice_sides": 20,
-      "modifier": 13
-    },
-    {
-      "name" : "Basic 1d20 + 0",
-      "num_dice": 1,
-      "num_dice_sides": 20,
-      "modifier": 0
-    },
-        {
-      "name" : "1d4 + 3",
-      "num_dice": 1,
-      "num_dice_sides": 4,
-      "modifier": 3
-    },
-    {
-      "name" : "1d20 + 5",
-      "num_dice": 5,
-      "num_dice_sides": 20,
-      "modifier": 5
-    },
-    {
-      "name" : "1d6 - 4",
-      "num_dice": 1,
-      "num_dice_sides": 6,
-      "modifier": -4
-    },
-    {
-      "name" : "big roller",
-      "num_dice": 20,
-      "num_dice_sides": 20,
-      "modifier": 13
-    },
-    {
-      "name" : "Basic 1d20 + 0",
-      "num_dice": 1,
-      "num_dice_sides": 20,
-      "modifier": 0
-    },
-        {
-      "name" : "1d4 + 3",
-      "num_dice": 1,
-      "num_dice_sides": 4,
-      "modifier": 3
-    },
-    {
-      "name" : "1d20 + 5",
-      "num_dice": 1,
-      "num_dice_sides": 20,
-      "modifier": 5
-    },
-    {
-      "name" : "1d6 - 4",
-      "num_dice": 1,
-      "num_dice_sides": 6,
-      "modifier": -4
-    },
-    {
-      "name" : "big roller",
-      "num_dice": 20,
-      "num_dice_sides": 20,
-      "modifier": 13
-    },
-    {
-      "name" : "Basic 1d20 + 0",
-      "num_dice": 1,
-      "num_dice_sides": 20,
-      "modifier": 0
-    },
-        {
-      "name" : "1d4 + 3",
-      "num_dice": 1,
-      "num_dice_sides": 4,
-      "modifier": 3
-    },
-    {
-      "name" : "1d20 + 5",
-      "num_dice": 1,
-      "num_dice_sides": 20,
-      "modifier": 5
-    },
-    {
-      "name" : "1d6 - 4",
-      "num_dice": 1,
-      "num_dice_sides": 6,
-      "modifier": -4
-    },
-    {
-      "name" : "big roller",
-      "num_dice": 20,
-      "num_dice_sides": 20,
-      "modifier": 13
-    },
-    {
-      "name" : "Basic 1d20 + 0",
-      "num_dice": 1,
-      "num_dice_sides": 20,
-      "modifier": 0
-    },
-        {
-      "name" : "1d4 + 3",
-      "num_dice": 1,
-      "num_dice_sides": 4,
-      "modifier": 3
-    },
-    {
-      "name" : "1d20 + 5",
-      "num_dice": 1,
-      "num_dice_sides": 20,
-      "modifier": 5
-    },
-    {
-      "name" : "1d6 - 4",
-      "num_dice": 1,
-      "num_dice_sides": 6,
-      "modifier": -4
-    },
-    {
-      "name" : "big roller",
-      "num_dice": 20,
-      "num_dice_sides": 20,
-      "modifier": 13
-    },
-    {
-      "name" : "Basic 1d20 + 0",
-      "num_dice": 1,
-      "num_dice_sides": 20,
-      "modifier": 0
     }
   ]
 }
