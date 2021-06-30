@@ -14,15 +14,17 @@ class DiceMaidenApp(tk.Frame):
         self.configure_window()
 
     def configure_window(self):
-        self.master.minsize(800, 400)
         self.master.grid_rowconfigure(0, weight=1)
         self.master.grid_columnconfigure(0, weight=1)
-        self.generate_file_menu()
+        self.generate_open_button()
         self.grid(row=0, column=0, sticky='nsew', padx='8', pady='8')
 
     def open_file(self):
         file = fd.askopenfile(title='Please select a dice maiden ui configuration file',
                            filetypes=[('JSON File', ['.json'])])
+
+        if not file:
+            return
 
         config_json = json.load(file)
 
@@ -30,17 +32,16 @@ class DiceMaidenApp(tk.Frame):
             validate_config_against_schema(config_json)
         except jsonschema.ValidationError as e:
             tk.messagebox.showerror("Invalid Configuration", "Error - {}".format(e.message))
+            return
 
         self.generate_widgets(config_json)
 
-    def generate_file_menu(self):
-        menubar = tk.Menu(self.master)
-        file_menu = tk.Menu(menubar)
-        file_menu.add_command(label='Open', command=self.open_file)
-        menubar.add_cascade(label='File', menu=file_menu)
-        self.master.config(menu=menubar)
+    def generate_open_button(self):
+        btn_open = tk.Button(self, text='Open Character', command=self.open_file)
+        btn_open.grid(row=0, column=0)
 
     def generate_widgets(self, config):
+        self.master.minsize(800, 400)
         self.frames = {}
 
         frm_commands = CommandsFrame(self, config=config, text='Commands', padx='5', pady='5')
