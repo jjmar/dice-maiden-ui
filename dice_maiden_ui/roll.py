@@ -1,7 +1,7 @@
 def generate_roll_string(num_dice, num_dice_sides, base_modifier,
                          extra_modifier, advantage, disadvantage, critical_role):
 
-    roll_format = "!roll {num_dice}d{num_dice_sides} {adv_dis} {modifier:+}"
+    roll_format = "!roll {num_dice}d{num_dice_sides} {adv_dis}{modifier:+}"
 
     num_dice = _calculate_num_dice(num_dice, advantage, disadvantage, critical_role)
     adv_dis = _calculate_advantage_disadvantage(advantage, disadvantage)
@@ -25,17 +25,13 @@ def _calculate_num_dice(num_dice, advantage, disadvantage, critical_role):
 
 def _calculate_advantage_disadvantage(advantage, disadvantage):
     if advantage:
-        return 'd1'
+        return 'd1 '
 
     if disadvantage:
-        return 'kl1'
+        return 'kl1 '
 
     return ''
 
 
 def _calculate_modifier(base_modifier, extra_modifier):
     return base_modifier + extra_modifier
-
-
-
-

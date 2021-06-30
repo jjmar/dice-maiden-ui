@@ -132,3 +132,6 @@ dmypy.json
 # Project Specific
 
 tkinter_testing/
+
+# Pytest
+.pytest_cache/
