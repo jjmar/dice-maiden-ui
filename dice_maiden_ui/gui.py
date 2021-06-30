@@ -21,7 +21,7 @@ class DiceMaidenApp(tk.Frame):
 
     def open_file(self):
         file = fd.askopenfile(title='Please select a dice maiden ui configuration file',
-                           filetypes=[('JSON File', ['.json'])])
+                              filetypes=[('JSON File', ['.json'])])
 
         if not file:
             return
