@@ -6,7 +6,8 @@ import pyperclip
 import json
 import jsonschema
 
-from command import Command, Modifiers, generate_roll_string
+from roll import generate_roll_string
+from models import Modifiers
 from configuration import validate_config_against_schema
 
 
@@ -47,7 +48,7 @@ class DiceMaidenApp(tk.Frame):
             tk.messagebox.showerror(title='Configuration file doesnt match schema', message=e.message)
             return
 
-        self.commands = [Command(c) for c in config_json['commands']]
+        self.commands = config_json['commands']
         self.current_modifiers = Modifiers(tk.BooleanVar(self), tk.BooleanVar(self), tk.IntVar(), tk.BooleanVar())
         self.generate_main_ui()
 
@@ -95,7 +96,7 @@ class CommandsFrame(tk.LabelFrame):
             self.grid_rowconfigure(row, weight=1)
             self.columnconfigure(column, weight=1)
 
-            b = tk.Button(self, text=c.name, width=1, wraplength=100, command=partial(self.master.click_command, c))
+            b = tk.Button(self, text=c['name'], width=1, wraplength=100, command=partial(self.master.click_command, c))
             b.grid(column=column, row=row, sticky='nsew')
 
             column += 1
