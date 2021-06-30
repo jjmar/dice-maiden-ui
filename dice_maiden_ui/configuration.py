@@ -2,14 +2,8 @@ import jsonschema
 import json
 
 
-def open_json_file(path):
-    with open(path) as f:
-        data = json.load(f)
-
-    return data
-
-
 def validate_config_against_schema(config_json):
-    schema_json = open_json_file('../data/configuration.schema')
+    with open('../data/configuration.schema') as f:
+        schema_json = json.load(f)
 
     jsonschema.validate(config_json, schema_json)
