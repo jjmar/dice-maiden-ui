@@ -1,0 +1,21 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@1.0.0
+
+jobs:
+  build:
+    docker:
+      - image: cimg/python:3.9.6
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: poetry
+      - run:
+          name: Flake8
+          command: |
+            poetry run flake8
+      - run:
+          name: Pytest
+          command: |
+            poetry run pytest
