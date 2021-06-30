@@ -73,7 +73,11 @@ class DiceMaidenApp(tk.Frame):
         self.frames[OutputFrame] = frm_output
 
     def click_command(self, command):
-        roll = generate_roll_string(command, self.current_modifiers)
+        roll = generate_roll_string(command['num_dice'], command['num_dice_sides'], command['modifier'],
+                                    self.current_modifiers.extra_modifier.get(),
+                                    self.current_modifiers.advantage.get(),
+                                    self.current_modifiers.disadvantage.get(),
+                                    self.current_modifiers.critical_hit.get())
 
         pyperclip.copy(roll)
 
