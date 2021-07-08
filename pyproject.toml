@@ -1,12 +1,15 @@
 [tool.poetry]
 name = "dice_maiden_ui"
-version = "0.1.0"
+version = "1.0.0"
 description = "GUI application designed to generate dice maiden roll commands"
 authors = ["Justin Martin <jjmardev@gmail.com>"]
 license = "GPL-3.0-only"
+readme = "README.md"
+homepage = "https://github.com/jjmar/dice-maiden-ui"
+repository = "https://github.com/jjmar/dice-maiden-ui"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.7"
 jsonschema = "^3.2.0"
 pyperclip = "^1.8.2"
 
