@@ -3,7 +3,11 @@ import tkinter as tk
 from dice_maiden_ui.gui import DiceMaidenApp
 
 
-if __name__ == "__main__":
+def run():
     root = tk.Tk()
-    app = DiceMaidenApp(root)
+    DiceMaidenApp(root)
     root.mainloop()
+
+
+if __name__ == "__main__":
+    run()
