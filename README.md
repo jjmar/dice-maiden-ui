@@ -1,11 +1,26 @@
+[![CircleCI](https://circleci.com/gh/jjmar/dice-maiden-ui/tree/main.svg?style=svg)](https://circleci.com/gh/jjmar/dice-maiden-ui/tree/main)
+
+
 # dice-maiden-ui
-Python app which provides a more automated way of generating roll commands for Dice Maiden dicsord app
+Python app which helps to generate roll commands for the [dice maiden discord app](https://top.gg/bot/377701707943116800).
 
-# Configuration
+You create a configuration file listing the details of your commands. When running the app, you select your configuration file
+which will generate the UI.
 
-1) Create a JSON document which outlines the commands you'd like this program to generate a GUI for. Please see the [config doc](documentation/json_config.md) for more info.
-2) Run the app (TODO)
+Before selecting the command you'd like to roll, select any options for the roll.
+Then upon clicking a command button, the generated roll will be automatically copied to your clipboard.
+
+![Dice Maiden UI](documentation/gui.png)
+
+
+# Installing the app
+
+`pip install dice-maiden-ui`
+
 
 # Running the app
 
-- TODO
+1) Ensure you've created your configuration file - see the [configuration setup doc](documentation/config.md).
+2) Run the app with either `dice_maiden_ui` or `python -m dice_maiden_ui`
+3) In the top left, click `Open` and find your configuration file from step 1
+
