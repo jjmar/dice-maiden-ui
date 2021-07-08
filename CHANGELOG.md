@@ -14,3 +14,9 @@
 - Open config via file browser window
 - General refactoring
 - Tests
+
+### Version 1.0.0
+
+- Add CircleCI support
+- Updated documentation
+- Ensured app can be packaged and run by end users
