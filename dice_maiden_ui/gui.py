@@ -6,9 +6,9 @@ import pyperclip
 import json
 import jsonschema
 
-from roll import generate_roll_string
-from models import Modifiers
-from configuration import validate_config_against_schema
+from dice_maiden_ui.roll import generate_roll_string
+from dice_maiden_ui.models import Modifiers
+from dice_maiden_ui.configuration import validate_config_against_schema
 
 
 class DiceMaidenApp(tk.Frame):
