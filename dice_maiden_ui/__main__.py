@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from gui import DiceMaidenApp
+from dice_maiden_ui.gui import DiceMaidenApp
 
 
 if __name__ == "__main__":

@@ -1,9 +1,15 @@
 import jsonschema
 import json
-
+from pathlib import Path
+import os
 
 def validate_config_against_schema(config_json):
-    with open('../data/configuration.schema') as f:
+    # file_path = os.path.join(os.getcwd(), '..', 'data', 'configuration.schema')
+    file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'configuration.schema')
+
+    # file_path = Path('../data/configuration.schema')
+
+    with open(file_path) as f:
         schema_json = json.load(f)
 
     jsonschema.validate(config_json, schema_json)
