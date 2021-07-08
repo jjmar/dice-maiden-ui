@@ -9,13 +9,14 @@ homepage = "https://github.com/jjmar/dice-maiden-ui"
 repository = "https://github.com/jjmar/dice-maiden-ui"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.6"
 jsonschema = "^3.2.0"
 pyperclip = "^1.8.2"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.2"
 pytest = "^6.2.4"
+pyinstaller = "^4.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
